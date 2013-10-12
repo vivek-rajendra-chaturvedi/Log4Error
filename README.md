@@ -1,6 +1,6 @@
 ## Introduction
 
-Log4Error helps capture most relevant logging messages from across the system without writing additional line in the code. It just simplifies the error from stack trace to simple error messages.
+Log4Error helps capture most relevant messages for logging from across the system without writing additional lines in the code. It just simplifies the error from stack trace to simple error messages.
 
 
 ## How to configure
@@ -29,7 +29,7 @@ Add the following line to some common exception handling place or wherever you w
 
       String errorMessage = Log4Error.Log4Error.GetErrorMessage(exception);
 
-All one needs to do is to add annotations to the methods about their relevance.
+All one needs to do is to add annotations to the methods with a relevant message.
  
         [ErrorMessage("Make Payment")]
         public void MakePayment(...)
@@ -53,17 +53,22 @@ All one needs to do is to add annotations to the methods about their relevance.
             ...
         }
 
-If an exception is thrown from IsBlackListed method the message you can get using this library would be :
+If an exception is thrown from IsBlackListed method, the message you will get would be:
 
       Make Payment -> Verifying credit card information -> Is card black listed
 
 
-Here you have an error message which can be understood by anyone, and you can focus on the right method and resolve the issue fast. 
+Here you have an error message which can be understood by anyone, and you can focus on the right part of the code and resolve the issue faster. 
 
-No more stack trace parsing.
 
-No more source code knowledge required.
 
-AND
+## Benefits :
 
-If you want to use this library properly, you will need to write modular code. Code quality improvement for free :)
+ No more stack trace parsing.
+
+ No more source code knowledge required.
+
+
+## Additional Benefit :
+
+ If you want to use this library to it's best, you would be required to write modular code :)
